@@ -1,0 +1,39 @@
+﻿@model EshopUkol8_10.Models.Product
+
+@{
+    ViewData["Title"] = "Vymazat Produkt";
+}
+
+
+
+<h3>Opravdu chcete tento produkt vymazat ?</h3>
+<div>
+    <h4>Produkt</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Count)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Count)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Vymazat" class="btn btn-danger" /> |
+        <a asp-action="Index">Zpět na seznam Produktů</a>
+    </form>
+</div>
